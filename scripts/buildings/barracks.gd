@@ -15,4 +15,4 @@ func _on_click_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: 
 		var level := get_tree().get_first_node_in_group("level") as Level
 		if level == null or level.is_placing():
 			return
-		level.spawn_infantry(global_position)
+		level.spawn_infantry(self)

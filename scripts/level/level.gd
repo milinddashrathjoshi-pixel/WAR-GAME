@@ -34,13 +34,18 @@ func _spawn_enemy() -> void:
 	e.add_to_group("enemy_buildings")
 
 
-# Called by the Barracks when tapped.
-func spawn_infantry(at_world: Vector2) -> void:
-	if infantry_scene == null:
+# Called by the Barracks when tapped. Spawns the unit on a free cell on the
+# ring around the building so AStar can immediately path away from it.
+func spawn_infantry(from_building: Building) -> void:
+	if infantry_scene == null or from_building == null:
 		return
+	var ring_cell := grid.get_attack_cell(
+		from_building.origin_cell, from_building.data.footprint, from_building.origin_cell)
+	if ring_cell.x < 0:
+		return   # no free adjacent cell — building is fully boxed in
 	var u := infantry_scene.instantiate()
 	units_root.add_child(u)
-	u.global_position = at_world
+	u.global_position = grid.cell_center_to_world(ring_cell)
 
 
 func get_target_building() -> Building:
