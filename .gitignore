@@ -3,8 +3,8 @@
 # Mono/C# (unused for now, kept for safety)
 .mono/
 data_*/
-# Godot export output
-export_presets.cfg
+# Web export output (built by CI, not committed)
+/build/
 
 # Gradle files
 .gradle/
