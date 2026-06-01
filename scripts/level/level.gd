@@ -4,13 +4,18 @@ extends Node2D
 ## request from the Barracks, and serves the current attack target. Lives in the
 ## "level" group so buildings/units can find it without hard references.
 
-@export var grid: GridManager
-@export var placement: PlacementController
-@export var units_root: Node2D
-@export var enemy_root: Node2D
+@export var grid_path: NodePath
+@export var placement_path: NodePath
+@export var units_root_path: NodePath
+@export var enemy_root_path: NodePath
 @export var infantry_scene: PackedScene
 @export var enemy_data: BuildingData
 @export var enemy_cell: Vector2i = Vector2i(18, 4)
+
+@onready var grid: GridManager = get_node(grid_path)
+@onready var placement: PlacementController = get_node(placement_path)
+@onready var units_root: Node2D = get_node(units_root_path)
+@onready var enemy_root: Node2D = get_node(enemy_root_path)
 
 
 func _ready() -> void:

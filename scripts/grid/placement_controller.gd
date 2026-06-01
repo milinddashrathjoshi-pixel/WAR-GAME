@@ -4,8 +4,11 @@ extends Node2D
 ## grid, tints green/red by validity (footprint free + affordable), and commits a
 ## real Building on tap. Mouse events cover touch via emulate_mouse_from_touch.
 
-@export var grid: GridManager
-@export var buildings_root: Node2D       # parent node for committed buildings
+@export var grid_path: NodePath
+@export var buildings_root_path: NodePath
+
+@onready var grid: GridManager = get_node(grid_path)
+@onready var buildings_root: Node2D = get_node(buildings_root_path)
 
 const COL_OK := Color(0.4, 1.0, 0.4, 0.6)
 const COL_BAD := Color(1.0, 0.3, 0.3, 0.6)
