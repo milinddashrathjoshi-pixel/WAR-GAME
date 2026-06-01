@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0main00000001"]
+
+[ext_resource type="Script" path="res://scripts/grid/grid_manager.gd" id="1_grid"]
+[ext_resource type="Script" path="res://scripts/grid/placement_controller.gd" id="2_place"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="3_hud"]
+[ext_resource type="Resource" path="res://data/command_center.tres" id="4_cc"]
+[ext_resource type="Resource" path="res://data/barracks.tres" id="5_brk"]
+
+[node name="Main" type="Node2D"]
+
+[node name="GridManager" type="Node2D" parent="."]
+script = ExtResource("1_grid")
+
+[node name="Buildings" type="Node2D" parent="."]
+
+[node name="EnemyBuildings" type="Node2D" parent="."]
+
+[node name="PlacementController" type="Node2D" parent="."]
+script = ExtResource("2_place")
+grid = NodePath("../GridManager")
+buildings_root = NodePath("../Buildings")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(768, 768)
+zoom = Vector2(0.5, 0.5)
+
+[node name="HUD" parent="." instance=ExtResource("3_hud")]
+placement = NodePath("../PlacementController")
+command_center_data = ExtResource("4_cc")
+barracks_data = ExtResource("5_brk")

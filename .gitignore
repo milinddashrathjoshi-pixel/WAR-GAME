@@ -1,3 +1,11 @@
+# Godot 4 engine
+.godot/
+# Mono/C# (unused for now, kept for safety)
+.mono/
+data_*/
+# Godot export output
+export_presets.cfg
+
 # Gradle files
 .gradle/
 build/

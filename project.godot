@@ -1,0 +1,32 @@
+; Engine configuration file.
+; Generated for "War Ops: Global Conquest" — MVP Phase 1.
+
+config_version=5
+
+[application]
+
+config/name="War Ops: Global Conquest"
+run/main_scene="res://scenes/main/main.tscn"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Economy="*res://autoload/economy.gd"
+
+[display]
+
+window/size/viewport_width=1152
+window/size/viewport_height=648
+window/handheld/orientation="landscape"
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[input_devices]
+
+pointing/emulate_mouse_from_touch=true
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

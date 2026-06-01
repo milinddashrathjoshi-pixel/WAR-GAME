@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BuildingData" load_steps=3 format=3 uid="uid://b0brkdata001"]
+
+[ext_resource type="Script" path="res://scripts/buildings/building_data.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/buildings/barracks.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"barracks"
+display_name = "Barracks"
+footprint = Vector2i(3, 3)
+cost = 200
+max_hp = 1000
+scene = ExtResource("2")
+icon = null
