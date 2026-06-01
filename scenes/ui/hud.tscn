@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0hud00000001"]
 
-[ext_resource type="Script" uid="uid://b0hudscript01" path="res://scripts/ui/hud.gd" id="1_hud"]
+[ext_resource type="Script" uid="uid://b1arwhud00001" path="res://scripts/ui/hud.gd" id="1_hud"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_hud")
@@ -53,6 +53,49 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Cancel"
 
+[node name="VictoryOverlay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+
+[node name="BG" type="ColorRect" parent="VictoryOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.65)
+
+[node name="Center" type="CenterContainer" parent="VictoryOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="VictoryOverlay/Center"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="VictoryLabel" type="Label" parent="VictoryOverlay/Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "VICTORY!"
+horizontal_alignment = 1
+
+[node name="PlayAgainButton" type="Button" parent="VictoryOverlay/Center/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+custom_minimum_size = Vector2(220, 60)
+text = "Play Again"
+
 [connection signal="pressed" from="Root/ButtonBar/CommandCenterButton" to="." method="_on_command_center_button_pressed"]
 [connection signal="pressed" from="Root/ButtonBar/BarracksButton" to="." method="_on_barracks_button_pressed"]
 [connection signal="pressed" from="Root/ButtonBar/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="VictoryOverlay/Center/VBox/PlayAgainButton" to="." method="_on_play_again_button_pressed"]

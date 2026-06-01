@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0enemycc0001"]
+[gd_scene load_steps=4 format=3 uid="uid://b0enemycc0001"]
 
-[ext_resource type="Script" path="res://scripts/buildings/building.gd" id="1_bld"]
+[ext_resource type="Script" uid="uid://b1arwbuilding" path="res://scripts/buildings/building.gd" id="1_bld"]
 [ext_resource type="Texture2D" path="res://icon.svg" id="2_tex"]
+[ext_resource type="PackedScene" uid="uid://b0healthbar01" path="res://scenes/ui/health_bar.tscn" id="3_hb"]
 
 [node name="EnemyCommandCenter" type="Node2D"]
 script = ExtResource("1_bld")
@@ -10,3 +11,5 @@ script = ExtResource("1_bld")
 modulate = Color(0.9, 0.2, 0.2, 1)
 scale = Vector2(2, 2)
 texture = ExtResource("2_tex")
+
+[node name="HealthBar" parent="." instance=ExtResource("3_hb")]

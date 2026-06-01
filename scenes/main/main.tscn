@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://b0main00000001"]
 
-[ext_resource type="Script" path="res://scripts/level/level.gd" id="0_level"]
-[ext_resource type="Script" path="res://scripts/grid/grid_manager.gd" id="1_grid"]
-[ext_resource type="Script" path="res://scripts/grid/placement_controller.gd" id="2_place"]
-[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="3_hud"]
-[ext_resource type="Resource" path="res://data/command_center.tres" id="4_cc"]
-[ext_resource type="Resource" path="res://data/barracks.tres" id="5_brk"]
-[ext_resource type="PackedScene" path="res://scenes/units/infantry.tscn" id="6_inf"]
-[ext_resource type="Resource" path="res://data/enemy_command_center.tres" id="7_enemy"]
+[ext_resource type="Script" uid="uid://b1arwlevel001" path="res://scripts/level/level.gd" id="0_level"]
+[ext_resource type="Script" uid="uid://b1arwgridmgr1" path="res://scripts/grid/grid_manager.gd" id="1_grid"]
+[ext_resource type="Script" uid="uid://b1arwplacemnt" path="res://scripts/grid/placement_controller.gd" id="2_place"]
+[ext_resource type="PackedScene" uid="uid://b0hud00000001" path="res://scenes/ui/hud.tscn" id="3_hud"]
+[ext_resource type="Resource" uid="uid://b0ccdata001" path="res://data/command_center.tres" id="4_cc"]
+[ext_resource type="Resource" uid="uid://b0brkdata001" path="res://data/barracks.tres" id="5_brk"]
+[ext_resource type="PackedScene" uid="uid://b0infantry0001" path="res://scenes/units/infantry.tscn" id="6_inf"]
+[ext_resource type="Resource" uid="uid://b0enemydata001" path="res://data/enemy_command_center.tres" id="7_enemy"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("0_level")

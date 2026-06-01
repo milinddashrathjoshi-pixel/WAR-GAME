@@ -4,7 +4,7 @@ A mobile military strategy game (Clash of Clans-style) built in **Godot 4.x**.
 Top-down 2D, base-building, resource economy, troops, and an upcoming "Jugaad"
 low-cost tech tree.
 
-> Status: **MVP — Phase 2 (Troop Spawning & Pathfinding)** complete.
+> Status: **MVP — Phase 3 (Combat & Victory)** complete. Full core loop playable.
 
 ## Phase 1 — Base Building & Economy
 
@@ -20,7 +20,15 @@ low-cost tech tree.
 - **Tap the Barracks** to spawn an **Infantry** unit.
 - **AStar2D pathfinding** built from the grid occupancy: units route *around*
   buildings to a free cell beside the enemy and walk the waypoints.
-- Reaching the target fires a combat hook (`Infantry._on_reached_target`).
+- Reaching the target stops the unit beside it and transitions to combat.
+
+## Phase 3 — Combat & Victory
+
+- Infantry auto-attacks the enemy building once in range (25 dmg / 0.7s).
+- `Building.take_damage` emits `hp_changed` and `destroyed` signals.
+- Live HP bar above the enemy Command Center (red → green gradient).
+- Enemy CC destroyed → `Level` emits `victory_triggered` → HUD shows a
+  **VICTORY!** overlay with a **Play Again** button (reloads the scene).
 
 ## Run
 
@@ -40,8 +48,9 @@ assets/     AI-generated placeholder art (modular, swap freely)
 
 ## Roadmap (not yet implemented)
 
-- **Phase 3** — auto-attack range loop, building HP depletion, Victory state.
-- Jugaad tech tree, jets/navies, global conquest map.
+- Jugaad tech tree (low-cost unconventional early defenses).
+- Multiple unit types, defensive towers, enemy AI attacks.
+- Jets, navies, global conquest map.
 
 ## Assets
 

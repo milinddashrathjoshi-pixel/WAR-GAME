@@ -1,8 +1,10 @@
 class_name Level
 extends Node2D
 ## Arena coordinator. Spawns the pre-placed enemy building, spawns Infantry on
-## request from the Barracks, and serves the current attack target. Lives in the
-## "level" group so buildings/units can find it without hard references.
+## request from the Barracks, serves the current attack target, and emits
+## victory_triggered when the enemy is destroyed.
+
+signal victory_triggered
 
 @export var grid_path: NodePath
 @export var placement_path: NodePath
@@ -32,6 +34,11 @@ func _spawn_enemy() -> void:
 	e.global_position = grid.footprint_center_to_world(enemy_cell, enemy_data.footprint)
 	grid.occupy_area(enemy_cell, enemy_data.footprint, e)
 	e.add_to_group("enemy_buildings")
+	e.destroyed.connect(_on_enemy_destroyed)
+
+
+func _on_enemy_destroyed() -> void:
+	victory_triggered.emit()
 
 
 # Called by the Barracks when tapped. Spawns the unit on a free cell on the
@@ -42,7 +49,7 @@ func spawn_infantry(from_building: Building) -> void:
 	var ring_cell := grid.get_attack_cell(
 		from_building.origin_cell, from_building.data.footprint, from_building.origin_cell)
 	if ring_cell.x < 0:
-		return   # no free adjacent cell — building is fully boxed in
+		return
 	var u := infantry_scene.instantiate()
 	units_root.add_child(u)
 	u.global_position = grid.cell_center_to_world(ring_cell)
