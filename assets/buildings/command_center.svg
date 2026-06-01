@@ -1,29 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <!-- Player Command Center: top-down blue/concrete octagonal HQ -->
-  <polygon points="477,348 348,477 164,477 35,348 35,164 164,35 348,35 477,164"
-           fill="#7c8794" stroke="#4b5563" stroke-width="10"/>
-  <polygon points="450,330 330,450 182,450 62,330 62,182 182,62 330,62 450,182"
-           fill="#5b6573" stroke="#3f4854" stroke-width="6"/>
-  <polygon points="413,321 321,413 191,413 99,321 99,191 191,99 321,99 413,191"
-           fill="#3b82f6" stroke="#1d4ed8" stroke-width="8"/>
-  <!-- roof panel seams -->
-  <g stroke="#1d4ed8" stroke-width="4" opacity="0.7">
-    <line x1="256" y1="99" x2="256" y2="413"/>
-    <line x1="99" y1="256" x2="413" y2="256"/>
-    <line x1="146" y1="146" x2="366" y2="366"/>
-    <line x1="366" y1="146" x2="146" y2="366"/>
+  <defs>
+    <radialGradient id="ccRoof" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#8cc0ff"/>
+      <stop offset="60%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1e49b8"/>
+    </radialGradient>
+    <linearGradient id="ccStone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#aab2bd"/>
+      <stop offset="100%" stop-color="#5c6672"/>
+    </linearGradient>
+  </defs>
+  <!-- drop shadow -->
+  <ellipse cx="256" cy="446" rx="196" ry="44" fill="#000000" opacity="0.22"/>
+  <!-- stone base -->
+  <polygon points="477,340 340,477 172,477 43,340 43,172 172,43 340,43 477,172"
+           fill="url(#ccStone)" stroke="#3f4854" stroke-width="9"/>
+  <!-- inner platform -->
+  <polygon points="445,330 330,445 182,445 67,330 67,182 182,67 330,67 445,182"
+           fill="#4a525d" stroke="#363d47" stroke-width="4"/>
+  <!-- blue roof -->
+  <polygon points="408,319 319,408 193,408 104,319 104,193 193,104 319,104 408,193"
+           fill="url(#ccRoof)" stroke="#1d4ed8" stroke-width="7"/>
+  <!-- roof highlight -->
+  <polygon points="319,104 193,104 256,167" fill="#a9d2ff" opacity="0.55"/>
+  <!-- panel seams -->
+  <g stroke="#1b3f9e" stroke-width="3" opacity="0.6">
+    <line x1="256" y1="104" x2="256" y2="408"/>
+    <line x1="104" y1="256" x2="408" y2="256"/>
   </g>
-  <!-- central command hub -->
-  <circle cx="256" cy="256" r="58" fill="#1e293b" stroke="#0f172a" stroke-width="6"/>
-  <circle cx="256" cy="256" r="26" fill="#60a5fa"/>
-  <!-- antenna -->
-  <line x1="256" y1="256" x2="256" y2="150" stroke="#0f172a" stroke-width="6"/>
-  <circle cx="256" cy="150" r="12" fill="#93c5fd"/>
-  <!-- corner sandbag dots -->
-  <g fill="#475569">
-    <circle cx="120" cy="120" r="14"/>
-    <circle cx="392" cy="120" r="14"/>
-    <circle cx="120" cy="392" r="14"/>
-    <circle cx="392" cy="392" r="14"/>
-  </g>
+  <!-- command hub -->
+  <circle cx="256" cy="256" r="60" fill="#1e293b" stroke="#0f172a" stroke-width="6"/>
+  <circle cx="256" cy="256" r="30" fill="#60a5fa"/>
+  <circle cx="246" cy="246" r="9" fill="#cfe6ff" opacity="0.8"/>
+  <!-- antenna + flag -->
+  <line x1="256" y1="256" x2="256" y2="138" stroke="#0f172a" stroke-width="6"/>
+  <polygon points="256,138 256,172 308,155" fill="#3b82f6"/>
 </svg>

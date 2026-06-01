@@ -147,15 +147,25 @@ func find_path_world(from_cell: Vector2i, to_cell: Vector2i) -> PackedVector2Arr
 	return result
 
 
-# --- debug grid (skipped when draw_debug_grid is off) ---
+# --- lush turf background + subtle tile grid ---
 
 func _draw() -> void:
-	if not draw_debug_grid:
-		return
-	var col := Color(1, 1, 1, 0.12)
 	var w := grid_width * cell_size
 	var h := grid_height * cell_size
+	# Rounded "island" drop shadow under the base.
+	draw_rect(Rect2(-24, -24, w + 48, h + 48), Color(0.07, 0.16, 0.20, 0.5))
+	# Grass checkerboard turf.
+	var grass_a := Color(0.49, 0.69, 0.32)
+	var grass_b := Color(0.43, 0.63, 0.28)
+	for x in grid_width:
+		for y in grid_height:
+			var col := grass_a if (x + y) % 2 == 0 else grass_b
+			draw_rect(Rect2(x * cell_size, y * cell_size, cell_size, cell_size), col)
+	if not draw_debug_grid:
+		return
+	# Faint tile separators.
+	var line_col := Color(0, 0, 0, 0.06)
 	for x in grid_width + 1:
-		draw_line(Vector2(x * cell_size, 0), Vector2(x * cell_size, h), col)
+		draw_line(Vector2(x * cell_size, 0), Vector2(x * cell_size, h), line_col)
 	for y in grid_height + 1:
-		draw_line(Vector2(0, y * cell_size), Vector2(w, y * cell_size), col)
+		draw_line(Vector2(0, y * cell_size), Vector2(w, y * cell_size), line_col)

@@ -1,33 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <!-- Enemy Command Center: menacing dark-red octagonal fortress -->
-  <!-- spikes pointing outward -->
+  <defs>
+    <radialGradient id="enRoof" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#e7484c"/>
+      <stop offset="60%" stop-color="#b91c1c"/>
+      <stop offset="100%" stop-color="#6e0d0d"/>
+    </radialGradient>
+    <linearGradient id="enStone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6a3030"/>
+      <stop offset="100%" stop-color="#3a1414"/>
+    </linearGradient>
+  </defs>
+  <!-- drop shadow -->
+  <ellipse cx="256" cy="448" rx="200" ry="46" fill="#000000" opacity="0.28"/>
+  <!-- spikes -->
   <g fill="#1a0606">
-    <polygon points="256,8 238,64 274,64"/>
-    <polygon points="256,504 238,448 274,448"/>
-    <polygon points="8,256 64,238 64,274"/>
-    <polygon points="504,256 448,238 448,274"/>
-    <polygon points="78,78 120,100 100,120"/>
-    <polygon points="434,78 412,120 392,100"/>
-    <polygon points="78,434 100,392 120,412"/>
-    <polygon points="434,434 392,412 412,392"/>
+    <polygon points="256,16 236,70 276,70"/>
+    <polygon points="84,84 128,104 104,128"/>
+    <polygon points="428,84 408,128 384,104"/>
+    <polygon points="16,256 70,236 70,276"/>
+    <polygon points="496,256 442,236 442,276"/>
   </g>
-  <polygon points="477,348 348,477 164,477 35,348 35,164 164,35 348,35 477,164"
-           fill="#3f1414" stroke="#1a0606" stroke-width="10"/>
-  <polygon points="450,330 330,450 182,450 62,330 62,182 182,62 330,62 450,182"
-           fill="#7f1d1d" stroke="#450a0a" stroke-width="6"/>
-  <polygon points="413,321 321,413 191,413 99,321 99,191 191,99 321,99 413,191"
-           fill="#b91c1c" stroke="#7f1d1d" stroke-width="8"/>
-  <!-- roof seams -->
-  <g stroke="#450a0a" stroke-width="4" opacity="0.8">
-    <line x1="256" y1="99" x2="256" y2="413"/>
-    <line x1="99" y1="256" x2="413" y2="256"/>
-    <line x1="146" y1="146" x2="366" y2="366"/>
-    <line x1="366" y1="146" x2="146" y2="366"/>
+  <!-- stone base -->
+  <polygon points="477,340 340,477 172,477 43,340 43,172 172,43 340,43 477,172"
+           fill="url(#enStone)" stroke="#1a0606" stroke-width="9"/>
+  <!-- inner platform -->
+  <polygon points="445,330 330,445 182,445 67,330 67,182 182,67 330,67 445,182"
+           fill="#591a1a" stroke="#360f0f" stroke-width="4"/>
+  <!-- red roof -->
+  <polygon points="408,319 319,408 193,408 104,319 104,193 193,104 319,104 408,193"
+           fill="url(#enRoof)" stroke="#7f1d1d" stroke-width="7"/>
+  <!-- roof highlight -->
+  <polygon points="319,104 193,104 256,167" fill="#ff8a8c" opacity="0.45"/>
+  <g stroke="#5a0f0f" stroke-width="3" opacity="0.7">
+    <line x1="256" y1="104" x2="256" y2="408"/>
+    <line x1="104" y1="256" x2="408" y2="256"/>
   </g>
   <!-- dark core -->
-  <circle cx="256" cy="256" r="58" fill="#1a0606" stroke="#000000" stroke-width="6"/>
-  <circle cx="256" cy="256" r="24" fill="#ef4444"/>
-  <!-- flag pole -->
-  <line x1="256" y1="256" x2="256" y2="146" stroke="#000000" stroke-width="6"/>
-  <polygon points="256,146 256,178 300,162" fill="#dc2626"/>
+  <circle cx="256" cy="256" r="60" fill="#1a0606" stroke="#000000" stroke-width="6"/>
+  <circle cx="256" cy="256" r="28" fill="#ef4444"/>
+  <circle cx="246" cy="246" r="8" fill="#ffd0d0" opacity="0.8"/>
+  <!-- flag -->
+  <line x1="256" y1="256" x2="256" y2="138" stroke="#000000" stroke-width="6"/>
+  <polygon points="256,138 256,172 308,155" fill="#dc2626"/>
 </svg>
