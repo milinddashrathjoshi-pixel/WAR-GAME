@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://b0cmdcenter001"]
 
 [ext_resource type="Script" uid="uid://b1arwbuilding" path="res://scripts/buildings/building.gd" id="1_bld"]
-[ext_resource type="Texture2D" path="res://assets/buildings/command_center.png" id="2_tex"]
+[ext_resource type="Texture2D" path="res://assets/buildings/command_center.svg" id="2_tex"]
 
 [node name="CommandCenter" type="Node2D"]
 script = ExtResource("1_bld")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_tex")

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- Enemy Command Center: menacing dark-red octagonal fortress -->
+  <!-- spikes pointing outward -->
+  <g fill="#1a0606">
+    <polygon points="256,8 238,64 274,64"/>
+    <polygon points="256,504 238,448 274,448"/>
+    <polygon points="8,256 64,238 64,274"/>
+    <polygon points="504,256 448,238 448,274"/>
+    <polygon points="78,78 120,100 100,120"/>
+    <polygon points="434,78 412,120 392,100"/>
+    <polygon points="78,434 100,392 120,412"/>
+    <polygon points="434,434 392,412 412,392"/>
+  </g>
+  <polygon points="477,348 348,477 164,477 35,348 35,164 164,35 348,35 477,164"
+           fill="#3f1414" stroke="#1a0606" stroke-width="10"/>
+  <polygon points="450,330 330,450 182,450 62,330 62,182 182,62 330,62 450,182"
+           fill="#7f1d1d" stroke="#450a0a" stroke-width="6"/>
+  <polygon points="413,321 321,413 191,413 99,321 99,191 191,99 321,99 413,191"
+           fill="#b91c1c" stroke="#7f1d1d" stroke-width="8"/>
+  <!-- roof seams -->
+  <g stroke="#450a0a" stroke-width="4" opacity="0.8">
+    <line x1="256" y1="99" x2="256" y2="413"/>
+    <line x1="99" y1="256" x2="413" y2="256"/>
+    <line x1="146" y1="146" x2="366" y2="366"/>
+    <line x1="366" y1="146" x2="146" y2="366"/>
+  </g>
+  <!-- dark core -->
+  <circle cx="256" cy="256" r="58" fill="#1a0606" stroke="#000000" stroke-width="6"/>
+  <circle cx="256" cy="256" r="24" fill="#ef4444"/>
+  <!-- flag pole -->
+  <line x1="256" y1="256" x2="256" y2="146" stroke="#000000" stroke-width="6"/>
+  <polygon points="256,146 256,178 300,162" fill="#dc2626"/>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- Player Command Center: top-down blue/concrete octagonal HQ -->
+  <polygon points="477,348 348,477 164,477 35,348 35,164 164,35 348,35 477,164"
+           fill="#7c8794" stroke="#4b5563" stroke-width="10"/>
+  <polygon points="450,330 330,450 182,450 62,330 62,182 182,62 330,62 450,182"
+           fill="#5b6573" stroke="#3f4854" stroke-width="6"/>
+  <polygon points="413,321 321,413 191,413 99,321 99,191 191,99 321,99 413,191"
+           fill="#3b82f6" stroke="#1d4ed8" stroke-width="8"/>
+  <!-- roof panel seams -->
+  <g stroke="#1d4ed8" stroke-width="4" opacity="0.7">
+    <line x1="256" y1="99" x2="256" y2="413"/>
+    <line x1="99" y1="256" x2="413" y2="256"/>
+    <line x1="146" y1="146" x2="366" y2="366"/>
+    <line x1="366" y1="146" x2="146" y2="366"/>
+  </g>
+  <!-- central command hub -->
+  <circle cx="256" cy="256" r="58" fill="#1e293b" stroke="#0f172a" stroke-width="6"/>
+  <circle cx="256" cy="256" r="26" fill="#60a5fa"/>
+  <!-- antenna -->
+  <line x1="256" y1="256" x2="256" y2="150" stroke="#0f172a" stroke-width="6"/>
+  <circle cx="256" cy="150" r="12" fill="#93c5fd"/>
+  <!-- corner sandbag dots -->
+  <g fill="#475569">
+    <circle cx="120" cy="120" r="14"/>
+    <circle cx="392" cy="120" r="14"/>
+    <circle cx="120" cy="392" r="14"/>
+    <circle cx="392" cy="392" r="14"/>
+  </g>
+</svg>

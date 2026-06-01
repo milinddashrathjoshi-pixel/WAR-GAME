@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- Barracks: top-down olive-green ridge tent with supply crates -->
+  <rect x="70" y="90" width="372" height="332" rx="18" fill="#3f4a25" stroke="#2c331a" stroke-width="8"/>
+  <!-- two tent slopes meeting at ridge -->
+  <polygon points="96,116 416,116 256,256 256,256" fill="#6b7d39"/>
+  <polygon points="96,396 416,396 256,256 256,256" fill="#5a6a30"/>
+  <polygon points="96,116 96,396 256,256" fill="#4f5d2b"/>
+  <polygon points="416,116 416,396 256,256" fill="#7a8d42"/>
+  <!-- ridge line -->
+  <line x1="96" y1="116" x2="416" y2="116" stroke="#323a1d" stroke-width="6"/>
+  <line x1="96" y1="396" x2="416" y2="396" stroke="#323a1d" stroke-width="6"/>
+  <line x1="256" y1="116" x2="256" y2="396" stroke="#caa15a" stroke-width="6" opacity="0.6"/>
+  <!-- entrance flap -->
+  <rect x="226" y="372" width="60" height="40" rx="6" fill="#2c331a"/>
+  <!-- supply crates at corners -->
+  <g fill="#8a5a2b" stroke="#5e3c1c" stroke-width="5">
+    <rect x="36" y="40" width="58" height="58" rx="6"/>
+    <rect x="418" y="40" width="58" height="58" rx="6"/>
+    <rect x="36" y="414" width="58" height="58" rx="6"/>
+    <rect x="418" y="414" width="58" height="58" rx="6"/>
+  </g>
+  <g stroke="#5e3c1c" stroke-width="4">
+    <line x1="36" y1="69" x2="94" y2="69"/>
+    <line x1="418" y1="69" x2="476" y2="69"/>
+    <line x1="36" y1="443" x2="94" y2="443"/>
+    <line x1="418" y1="443" x2="476" y2="443"/>
+  </g>
+</svg>
