@@ -2,6 +2,8 @@ name: Web Build & Deploy
 
 # Builds the Godot project as an HTML5/Web export and publishes it to
 # GitHub Pages so it can be played in any browser (including mobile Safari).
+# Uses the barichello/godot-ci image which ships Godot + export templates,
+# avoiding the "no export template found" failure mode.
 
 on:
   push:
@@ -20,27 +22,22 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.4
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Godot 4.4
-        uses: chickensoft-games/setup-godot@v2
-        with:
-          version: 4.4.1
-          use-dotnet: false
-
-      - name: Import resources
-        run: godot --headless --import
-        continue-on-error: true
+      - name: Make export templates visible to Godot
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mv /root/.local/share/godot/export_templates/* ~/.local/share/godot/export_templates/ || true
 
       - name: Export Web build
         run: |
-          mkdir -p build/web
-          godot --headless --export-release "Web" "$PWD/build/web/index.html"
-
-      - name: Disable Jekyll processing
-        run: touch build/web/.nojekyll
+          mkdir -v -p build/web
+          godot --headless --verbose --export-release "Web" build/web/index.html
+          touch build/web/.nojekyll
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
