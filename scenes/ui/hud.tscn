@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0hud00000001"]
 
-[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_hud"]
+[ext_resource type="Script" uid="uid://b0hudscript01" path="res://scripts/ui/hud.gd" id="1_hud"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_hud")
@@ -12,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="CreditsLabel" type="Label" parent="Root"]
 layout_mode = 1
@@ -19,6 +20,7 @@ offset_left = 24.0
 offset_top = 16.0
 offset_right = 324.0
 offset_bottom = 52.0
+mouse_filter = 2
 text = "Credits: 0"
 
 [node name="ButtonBar" type="HBoxContainer" parent="Root"]
@@ -33,6 +35,7 @@ offset_right = -24.0
 offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 theme_override_constants/separation = 16
 
 [node name="CommandCenterButton" type="Button" parent="Root/ButtonBar"]
