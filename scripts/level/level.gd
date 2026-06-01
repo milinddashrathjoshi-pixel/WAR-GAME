@@ -53,6 +53,7 @@ func spawn_infantry(from_building: Building) -> void:
 	var u := infantry_scene.instantiate()
 	units_root.add_child(u)
 	u.global_position = grid.cell_center_to_world(ring_cell)
+	Sfx.play(&"spawn")
 
 
 func get_target_building() -> Building:

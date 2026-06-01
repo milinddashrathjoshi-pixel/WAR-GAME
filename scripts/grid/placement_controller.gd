@@ -79,4 +79,5 @@ func _try_commit() -> void:
 	b.setup(_active, _cell)
 	b.global_position = grid.footprint_center_to_world(_cell, _active.footprint)
 	grid.occupy_area(_cell, _active.footprint, b)
+	Sfx.play(&"place")
 	cancel_placement()

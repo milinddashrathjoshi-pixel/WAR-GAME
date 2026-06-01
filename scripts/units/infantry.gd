@@ -60,5 +60,19 @@ func _physics_process(delta: float) -> void:
 func _attack(delta: float) -> void:
 	_attack_timer -= delta
 	if _attack_timer <= 0.0:
+		_spawn_tracer()
 		_target.take_damage(damage)
 		_attack_timer = attack_interval
+
+
+func _spawn_tracer() -> void:
+	# Brief firing line from this unit to the target that fades out.
+	var line := Line2D.new()
+	line.width = 3.0
+	line.default_color = Color(1.0, 0.9, 0.35, 0.9)
+	line.add_point(global_position)
+	line.add_point(_target.global_position)
+	get_parent().add_child(line)
+	var t := line.create_tween()
+	t.tween_property(line, "modulate:a", 0.0, 0.15)
+	t.tween_callback(line.queue_free)

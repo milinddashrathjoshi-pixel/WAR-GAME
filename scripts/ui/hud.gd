@@ -44,6 +44,9 @@ func _on_cancel_button_pressed() -> void:
 
 func _on_victory() -> void:
 	_victory_overlay.visible = true
+	_victory_overlay.modulate.a = 0.0
+	create_tween().tween_property(_victory_overlay, "modulate:a", 1.0, 0.4)
+	Sfx.play(&"victory")
 
 
 func _on_play_again_button_pressed() -> void:
