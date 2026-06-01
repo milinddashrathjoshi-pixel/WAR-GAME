@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BuildingData" load_steps=3 format=3 uid="uid://b0enemydata001"]
+
+[ext_resource type="Script" path="res://scripts/buildings/building_data.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/buildings/enemy_command_center.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"enemy_command_center"
+display_name = "Enemy Command Center"
+footprint = Vector2i(4, 4)
+cost = 0
+max_hp = 3000
+scene = ExtResource("2")
+icon = null

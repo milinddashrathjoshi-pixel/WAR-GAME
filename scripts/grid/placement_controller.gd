@@ -30,6 +30,8 @@ func begin_placement(data: BuildingData) -> void:
 	_ghost = data.scene.instantiate()
 	_ghost.set_process(false)         # ghost is purely visual: no per-frame cost
 	_ghost.set_physics_process(false)
+	if "is_ghost" in _ghost:          # e.g. Barracks: don't let the ghost spawn troops
+		_ghost.set("is_ghost", true)
 	_ghost_sprite = _ghost.get_node_or_null("Sprite2D")
 	add_child(_ghost)
 	_update_ghost()

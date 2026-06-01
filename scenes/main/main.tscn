@@ -1,12 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0main00000001"]
+[gd_scene load_steps=9 format=3 uid="uid://b0main00000001"]
 
+[ext_resource type="Script" path="res://scripts/level/level.gd" id="0_level"]
 [ext_resource type="Script" path="res://scripts/grid/grid_manager.gd" id="1_grid"]
 [ext_resource type="Script" path="res://scripts/grid/placement_controller.gd" id="2_place"]
 [ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="3_hud"]
 [ext_resource type="Resource" path="res://data/command_center.tres" id="4_cc"]
 [ext_resource type="Resource" path="res://data/barracks.tres" id="5_brk"]
+[ext_resource type="PackedScene" path="res://scenes/units/infantry.tscn" id="6_inf"]
+[ext_resource type="Resource" path="res://data/enemy_command_center.tres" id="7_enemy"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("0_level")
+grid = NodePath("GridManager")
+placement = NodePath("PlacementController")
+units_root = NodePath("Units")
+enemy_root = NodePath("EnemyBuildings")
+infantry_scene = ExtResource("6_inf")
+enemy_data = ExtResource("7_enemy")
+enemy_cell = Vector2i(18, 4)
 
 [node name="GridManager" type="Node2D" parent="."]
 script = ExtResource("1_grid")
@@ -14,6 +25,8 @@ script = ExtResource("1_grid")
 [node name="Buildings" type="Node2D" parent="."]
 
 [node name="EnemyBuildings" type="Node2D" parent="."]
+
+[node name="Units" type="Node2D" parent="."]
 
 [node name="PlacementController" type="Node2D" parent="."]
 script = ExtResource("2_place")
