@@ -1,0 +1,19 @@
+{
+  "name": "netsuite-memo-sync",
+  "version": "1.0.0",
+  "description": "Update NetSuite Sales/Credit Memos from an Excel/CSV file using Token-Based Authentication (OAuth 1.0), and generate reports.",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "sync": "node src/syncMemos.js",
+    "sync:dry": "node src/syncMemos.js --dry-run",
+    "report": "node src/report.js"
+  },
+  "dependencies": {
+    "csv-parse": "^5.5.6",
+    "dotenv": "^16.4.5",
+    "xlsx": "^0.18.5"
+  }
+}

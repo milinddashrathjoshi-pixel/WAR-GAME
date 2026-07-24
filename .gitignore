@@ -32,3 +32,13 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# ── NetSuite memo sync (Node) ──────────────────────────────────────────────
+# Never commit secrets or customer data
+netsuite-memo-sync/.env
+netsuite-memo-sync/node_modules/
+netsuite-memo-sync/data/*
+!netsuite-memo-sync/data/.gitkeep
+netsuite-memo-sync/reports/*
+!netsuite-memo-sync/reports/.gitkeep
+.env
